@@ -1,12 +1,4 @@
-# Artificial Imaging-Guided Nanoengineered Immunosensor for MASLD Detection
-
-Reference implementation of the contrastive learning framework for
-multi-biomarker MASLD detection guided by artificial liver-MRI imaging.
-The pipeline pairs a six-biomarker plasma panel with 3D MRI volumes,
-trains a cross-modal retrieval model with symmetric InfoNCE loss, and
-classifies MASLD status (PDFF >= 5%) using the resulting fused
-embeddings. Publication figure and table renderers are distributed
-separately with the manuscript and are not included here.
+# Artificial imaging–guided immunosensor from a metal–organic framework for multiplex biomarker detection in steatotic liver disease
 
 ---
 
@@ -101,17 +93,6 @@ python -m data.dicom_processor            # Stage 1: DICOM -> .pt tensors
 python -m training.trainer                # Stage 3: contrastive training
 python -m clustering.pipeline             # Stage 4: clustering + EDD + classifier
 ```
-
-### Cohort split
-
-The 108-patient cohort is partitioned 57 / 20 / 31 by row order in the
-local `dataset_cardioAI.xlsx`:
-
-| Cohort           | Range (1-based) | Role                                                                              | CLI flag                   |
-|------------------|-----------------|-----------------------------------------------------------------------------------|----------------------------|
-| Training         | 1-57            | contrastive cross-modal alignment                                                 | `--train-patients 1-57`    |
-| Validation       | 58-77           | contrastive val + model selection                                                 | `--val-patients 58-77`     |
-| Independent test | 78-108          | artificial imaging-guided clustering (biomarkers routed through retrieval)        | `--test-patients 78-108`   |
 
 ### Hardware
 
