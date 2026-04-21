@@ -1,0 +1,71 @@
+# --- Python bytecode / build artefacts ---------------------------------------
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# --- Virtual environments ----------------------------------------------------
+.venv/
+venv/
+env/
+
+# --- Jupyter / notebook checkpoints ------------------------------------------
+.ipynb_checkpoints/
+
+# --- Claude Code / assistant state -------------------------------------------
+.claude/
+
+# --- Local pre-refactor archive ----------------------------------------------
+# Older script versions are snapshotted under ./archive/{timestamp}/ when
+# modified; kept out of version control.
+archive/
+
+# --- Secrets / credentials ---------------------------------------------------
+# GitHub deploy key and any other credentials live here; NEVER commit.
+keys/
+
+# --- Internal project documentation ------------------------------------------
+# CLAUDE.md is the in-repo brief for the Claude Code assistant; not for the
+# public submission.
+CLAUDE.md
+
+# --- Manuscript figure assets ------------------------------------------------
+# Rendered figures from the paper; copyrighted, not part of the code release.
+Figure*.png
+Figures/
+architecture.png
+
+# --- Publication figure / table renderers ------------------------------------
+# Scripts that generate paper figures and Excel tables are shipped with the
+# manuscript rather than the public codebase.
+figures/
+reports/
+
+# --- Patient-level data ------------------------------------------------------
+# Contains identifying biomarker data and must not be public.
+dataset_cardioAI.xlsx
+
+# --- Training artefacts ------------------------------------------------------
+# Local results / checkpoints that are too large or too patient-specific.
+results/
+*.pth
+*.pt
+*.pkl
+
+# --- Plan files (local assistant scratch) ------------------------------------
+plans/
+
+# --- OS / IDE cruft ----------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
